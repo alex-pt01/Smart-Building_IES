@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+  <body>
+    <div class="container">
+        <div class="row text-center " style="padding-top:200px;">
+            <h1> <strong>SMART BUILDING LOGIN </strong></h1>
+            <br/>
+        </div>
+           <div class="row ">
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" >
+
+                    <form class="form-signin" method="POST" th:action="@{/login}">
+
+                        <div class="form-group ">
+                      
+                            <span th:text="${message}"></span>
+                        </br>
+                    </br>
+                            <label >Username:</label><br>
+
+                            <input name="username" type="text" class="form-control" placeholder="Username"/>
+                            <label >Password:</label><br>
+
+                            <input name="password" type="password" class="form-control" placeholder="Password"/>
+
+                            
+                            <span class="has-error" th:text="${error}"></span>
+
+
+
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <br/>
+
+
+                            <button class="btn btn-primary right" type="submit">Log In</button>
+                            
+                            
+                            <h4 class="text"><a href="/registration">Create an account</a></h4>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    <img src="https://cdn2.iconfinder.com/data/icons/smart-city-8/50/36-512.png"   alt="Girl in a jacket" style="width:400px;height:450px;position:absolute; top: 40%;float:right">
+
+
+
+  </body>
+
+  
+</html>
